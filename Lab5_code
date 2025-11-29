@@ -1,0 +1,15 @@
+<?php
+
+$data = json_decode(file_get_contents("php://input"), true);
+
+$name = $data["name"];
+
+
+$response = [
+    "status" => "success",
+    "message" => "Welcome, Maria! " . $name . "!"
+];
+
+
+header('Content-Type: application/json');
+echo json_encode($response);
